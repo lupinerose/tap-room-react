@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project Component Structure
 <p align="center">
-  <img src="assets/TapRoomComponentStructure.jpg" alt="image of component structure" height="80%" width="80%">
+  <img src="./src/assets/TapRoomComponentStructure.jpg" alt="image of component structure" height="80%" width="80%">
 </p>
 
 ## Available Scripts

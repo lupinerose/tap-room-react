@@ -5,6 +5,10 @@
   height: 100vh;
 }
 
+div {
+  background-color: pink;
+}
+
 .navArea {
   grid-column: 1 / 2;
   grid-row: 1 / 6;
@@ -26,7 +30,6 @@
   grid-column: 2 / 6;
   grid-row: 2 / 6;
   overflow: scroll;
-  padding: 20px;
   border: 2px solid black;
   border-radius: 25px;
   margin: 20px;

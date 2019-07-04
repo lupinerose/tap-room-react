@@ -3,18 +3,8 @@ import PropTypes from 'prop-types'
 import './Keg.css'
 
 function Keg(props){
-  var styles = {
-    // backgroundColor: '#ecf0f1',
-    fontFamily: 'sans-serif'
-  }
-    
   return(
-    <div style={styles}>
-      <style jsx>{`
-        div {
-            background-color: pink;
-        }
-        `}</style>
+    <div>
       <div className="kegDetail">
         <h3>{props.name} -- {props.type} || ${props.pricePint} per Pint || ${props.price8oz} per 8oz || {props.remainingPints} Pints remaining</h3>
         <h4>This beer is...</h4>

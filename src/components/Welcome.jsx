@@ -7,9 +7,9 @@ function Welcome() {
   return (
     <div className="Welcome">
       <header className="Welcome-header">
-        <Link to="/employee">Employee</Link>
+        <Link to="/employee" className="link">Employee</Link>
         <img src={logo} className="Welcome-logo" alt="logo" />
-        <Link to="/patron">Patron</Link>
+        <Link to="/patron" className="link">Patron</Link>
       </header>
     </div>
   )

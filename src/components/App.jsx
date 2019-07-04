@@ -14,12 +14,12 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/' component={Welcome} />
-        <Route path='/employee' component={Employee} />
-        <Route path='/patron' component={Patron} />
-        <Route path='/employee/new-order' component={NewOrder} />
-        <Route path='/employee/new-keg' component={NewKeg} />
-        <Route path='/employee/edit-keg' component={EditKeg} />
-        <Route path='/employee/search' component={SearchKegs} />
+        <Route exact path='/employee' component={Employee} />
+        <Route exact path='/patron' component={Patron} />
+        <Route exact path='/employee/new-order' component={NewOrder} />
+        <Route exact path='/employee/new-keg' component={NewKeg} />
+        <Route exact path='/employee/edit-keg' component={EditKeg} />
+        <Route exact path='/employee/search' component={SearchKegs} />
       </Switch>
     </div>
   )

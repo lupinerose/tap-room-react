@@ -13,7 +13,6 @@ function App() {
         <Route path='/employee' component={Employee} />
         <Route path='/patron' component={Patron} />
       </Switch>
-      <Welcome/>
     </div>
   )
 }

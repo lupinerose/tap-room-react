@@ -5,7 +5,12 @@ import './Employee.css'
 function Employee() {
   return(
     <div className="layout">
-      <KegList/>
+      <div className="navArea">
+        
+      </div>
+      <div>
+        <KegList/>
+      </div>
     </div>
   )
 }

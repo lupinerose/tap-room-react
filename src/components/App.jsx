@@ -1,23 +1,15 @@
 import React from 'react'
 import logo from '../assets/taproomlogo.jpg'
 import './App.css'
+import { Link } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Link to="/employee">Employee</Link>
         <img src={logo} className="App-logo" alt="logo" />
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+        <Link to="/customer">Customer</Link>
       </header>
     </div>
   )

@@ -87,7 +87,7 @@ function KegList(){
     <div>
       <hr/>
       {masterKegList.map((keg, index) => 
-        <keg name={keg.name}
+        <Keg name={keg.name}
           pricePint={keg.pricePint}
           price8oz={keg.price8oz}
           brand={keg.brand}

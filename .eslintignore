@@ -1,0 +1,7 @@
+**/logo.svg
+**/assets/
+**/*.css
+**/**/*.css
+**/*.test.jsx
+**/**/*.test.jsx
+serviceWorker.js

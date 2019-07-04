@@ -5,12 +5,7 @@ import './Keg.css'
 function Keg(props){
   var styles = {
     // backgroundColor: '#ecf0f1',
-    fontFamily: 'sans-serif',
-    paddingTop: '50px'
-  }
-
-  var styles2 = {
-    color: 'orange'
+    fontFamily: 'sans-serif'
   }
     
   return(
@@ -20,17 +15,16 @@ function Keg(props){
             background-color: pink;
         }
         `}</style>
-      <h3 style={styles2}>{props.name} - {props.type}</h3>
-      <p className="test">Price per Pint: <em>${props.pricePint}</em></p>
-      <p className="test">Price per 8oz: <em>${props.price8oz}</em></p>
-      <p className="test">Remaining Pints: <em>{props.remainingPints}</em></p>
-      <p className="test">Seasonal? <em>{props.seasonal}</em></p>
-      <h4>This beer is...</h4>
-      <p className="test">Brewed by <em>{props.brand}</em></p>
-      <p className="test">Local to <em>{props.locality}</em></p>
-      <p className="test">Brewed in <em>{props.city}{props.state}</em></p>
-      <p className="test">In the great <em>{props.country}</em></p>
-      <hr/>
+      <div className="kegDetail">
+        <h3>{props.name} -- {props.type} || ${props.pricePint} per Pint || ${props.price8oz} per 8oz || {props.remainingPints} Pints remaining</h3>
+        <h4>This beer is...</h4>
+        <p className="test">Seasonal? <em>{props.seasonal}</em></p>
+        <p className="test">Brewed by <em>{props.brand}</em></p>
+        <p className="test">Local to <em>{props.locality}</em></p>
+        <p className="test">Brewed in <em>{props.city}{props.state}</em></p>
+        <p className="test">In the great <em>{props.country}</em></p>
+        <hr/>
+      </div>
     </div>
   )
 }

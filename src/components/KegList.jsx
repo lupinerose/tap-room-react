@@ -85,8 +85,7 @@ var masterKegList = [
 
 function KegList(){
   return(
-    <div className="">
-      <hr/>
+    <div className="kegList2">
       {masterKegList.map((keg, index) => 
         <Keg name={keg.name}
           pricePint={keg.pricePint}

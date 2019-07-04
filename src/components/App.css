@@ -10,7 +10,8 @@
 
 .App-header {
   margin-top: 25%;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background-image: linear-gradient(to right, rgba(255,0,0,0),white, white, rgba(255,0,0,0)); 
   margin-top: 12.5%;
   min-height: 50vh;
   display: flex;

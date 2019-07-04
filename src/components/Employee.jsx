@@ -4,7 +4,7 @@ import './Employee.css'
 
 function Employee() {
   return(
-    <div>
+    <div className="layout">
       <KegList/>
     </div>
   )

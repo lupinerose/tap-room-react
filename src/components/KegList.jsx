@@ -1,5 +1,6 @@
 import React from 'react'
 import Keg from './Keg'
+import './KegList.css'
 
 var masterKegList = [
   {
@@ -84,7 +85,7 @@ var masterKegList = [
 
 function KegList(){
   return(
-    <div>
+    <div className="layout">
       <hr/>
       {masterKegList.map((keg, index) => 
         <Keg name={keg.name}

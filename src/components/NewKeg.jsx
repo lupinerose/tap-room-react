@@ -1,10 +1,10 @@
 import React from 'react'
 
-function NewOrder() {
+function NewKeg() {
   return(
     <div>
     </div>
   )
 }
 
-export default NewOrder
+export default NewKeg

@@ -1,0 +1,12 @@
+.stack {
+  height: 100vh;
+  display: grid;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.center {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}

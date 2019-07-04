@@ -21,16 +21,15 @@ function Keg(props){
         }
         `}</style>
       <h3 style={styles2}>{props.name} - {props.type}</h3>
-      <p className="test"><em>{props.pricePint}</em></p>
-      <p className="test"><em>{props.price8oz}</em></p>
-      <p className="test"><em>{props.remainingPints}</em></p>
-      <p className="test"><em>{props.seasonal}</em></p>
-      <hr/>
-      <p className="test"><em>{props.brand}</em></p>
-      <p className="test"><em>{props.locality}</em></p>
-      <p className="test"><em>{props.city}</em></p>
-      <p className="test"><em>{props.state}</em></p>
-      <p className="test"><em>{props.country}</em></p>
+      <p className="test">Price per Pint: <em>${props.pricePint}</em></p>
+      <p className="test">Price per 8oz: <em>${props.price8oz}</em></p>
+      <p className="test">Remaining Pints: <em>{props.remainingPints}</em></p>
+      <p className="test">Seasonal? <em>{props.seasonal}</em></p>
+      <h4>This beer is...</h4>
+      <p className="test">Brewed by <em>{props.brand}</em></p>
+      <p className="test">Local to <em>{props.locality}</em></p>
+      <p className="test">Brewed in <em>{props.city}{props.state}</em></p>
+      <p className="test">In the great <em>{props.country}</em></p>
       <hr/>
     </div>
   )

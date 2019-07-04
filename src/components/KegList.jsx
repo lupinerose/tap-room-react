@@ -9,10 +9,10 @@ var masterKegList = [
     brand: 'Pyramid Brewing Co.',
     type: 'IPA',
     remainingPints: '124',
-    seasonal: 'false',
-    locality: 'Pacific NorthWest',
+    seasonal: 'no',
+    locality: 'the Pacific NorthWest',
     city: 'Seattle',
-    state: 'Washington',
+    state: ', Washington',
     country: 'USA'
   },
   {
@@ -22,10 +22,10 @@ var masterKegList = [
     brand: 'Lompoc Brewing Co.',
     type: 'Red Ale',
     remainingPints: '64',
-    seasonal: 'false',
-    locality: 'Local to Town',
+    seasonal: 'no',
+    locality: 'Town',
     city: 'Portland',
-    state: 'Oregon',
+    state: ', Oregon',
     country: 'USA'
   },
   {
@@ -35,10 +35,10 @@ var masterKegList = [
     brand: 'Ninkasi Brewing Co.',
     type: 'Dark Double Alt Ale',
     remainingPints: '20',
-    seasonal: 'true',
-    locality: 'Local to State',
+    seasonal: 'yes',
+    locality: 'State',
     city: 'Eugene',
-    state: 'Oregon',
+    state: ', Oregon',
     country: 'USA'
   },
   {
@@ -48,8 +48,8 @@ var masterKegList = [
     brand: 'Cervecería Modelo',
     type: 'Pale Lager',
     remainingPints: '9',
-    seasonal: 'false',
-    locality: 'Foreign',
+    seasonal: 'no',
+    locality: 'Earth',
     city: '',
     state: '',
     country: 'Mexico'
@@ -61,8 +61,8 @@ var masterKegList = [
     brand: 'Sabeco',
     type: 'Lager',
     remainingPints: '124',
-    seasonal: 'false',
-    locality: 'Foreign',
+    seasonal: 'no',
+    locality: 'Earth',
     city: 'Ho Chi Minh City',
     state: '',
     country: 'Vietnam'
@@ -74,10 +74,10 @@ var masterKegList = [
     brand: 'Pabst Brewing Co.',
     type: 'Lager',
     remainingPints: '53',
-    seasonal: 'false',
-    locality: 'Midwest',
+    seasonal: 'no',
+    locality: 'the Midwest',
     city: 'Milwaukee',
-    state: 'Wisconsin',
+    state: ', Wisconsin',
     country: 'USA'
   }
 ]

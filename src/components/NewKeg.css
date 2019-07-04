@@ -1,0 +1,13 @@
+.formArea {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.formArea input {
+  height: 40px;
+  font-size: 20px;
+}

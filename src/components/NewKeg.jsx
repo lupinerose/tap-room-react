@@ -1,9 +1,10 @@
 import React from 'react'
 import EmployeeNav from './EmployeeNav'
+import './NewKeg.css'
 
 function NewKeg() {
   return(
-    <div>
+    <div className="layout">
       <div className="navArea">
         <EmployeeNav/>
       </div>
@@ -11,35 +12,37 @@ function NewKeg() {
         <h1>Add New Keg</h1>
       </div>
       <div className="kegListArea">
-        <div>
-          <label>Name</label>
-          <input type="text"/>
-          <label>Type</label>
-          <input type="text"/>
-          <label>Alcohol Content</label>
-          <input type="text"/>
-          <label>Brewery</label>
-          <input type="text"/>
+        <div className="formArea">
+          <div>
+            <label name="beer">Name</label><br/><br/>
+            <label name="type">Type</label><br/><br/>
+            <label name="alcohol">Alcohol Content</label><br/><br/>
+            <label name="brewery">Brewery</label><br/><br/>
+          </div>
+          <div>
+            <input name="beer" type="text"/><br/><br/>
+            <input name="type" type="text"/><br/><br/>
+            <input name="alcohol" type="text"/><br/><br/>
+            <input name="brewery" type="text"/>
+          </div>
+          <div>
+            <label>Seasonal</label><br/><br/>
+            <label>Locality</label><br/><br/>
+            <label>City</label><br/><br/>
+            <label>State</label><br/><br/>
+            <label>Country</label>
+          </div>
+          <div>
+            <input name="seasonal" type="text"/><br/><br/>
+            <input name="locality" type="text"/><br/><br/>
+            <input name="city" type="text"/><br/><br/>
+            <input name="state" type="text"/><br/><br/>
+            <input name="country" type="text"/>
+          </div>
         </div>
-        <div>
-
-        </div>
-        <input type="text"/>
       </div>
     </div>
   )
 }
-
-name: 'Thunderhead',
-pricePint: '5',
-price8oz: '3',
-brand: 'Pyramid Brewing Co.',
-type: 'IPA',
-remainingPints: '124',
-seasonal: 'no',
-locality: 'the Pacific NorthWest',
-city: 'Seattle',
-state: ', Washington',
-country: 'USA'
 
 export default NewKeg

@@ -3,7 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Project Component Structure
-  <img src="assets/homePage.png" alt="image of component structure" height="80%" width="80%">
+<p align="center">
+  <img src="assets/TapRoomComponentStructure.jpg" alt="image of component structure" height="80%" width="80%">
+</p>
 
 ## Available Scripts
 

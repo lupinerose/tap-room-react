@@ -13,7 +13,6 @@ function Keg(props){
         <p className="test">Local to <em>{props.locality}</em></p>
         <p className="test">Brewed in <em>{props.city}{props.state}</em></p>
         <p className="test">In the great <em>{props.country}</em></p>
-        <hr/>
       </div>
     </div>
   )

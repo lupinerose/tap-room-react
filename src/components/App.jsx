@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
 import Employee from './Employee'
 import Patron from './Patron'
+import Welcome from './Welcome'
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path='/' component={App} />
+        <Route exact path='/' component={Welcome} />
         <Route path='/employee' component={Employee} />
         <Route path='/patron' component={Patron} />
       </Switch>

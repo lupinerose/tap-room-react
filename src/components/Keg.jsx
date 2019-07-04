@@ -6,7 +6,7 @@ function Keg(props){
   return(
     <div>
       <div className="kegDetail">
-        <h3>{props.name} -- {props.type} || ${props.pricePint} per Pint || ${props.price8oz} per 8oz || {props.remainingPints} Pints remaining</h3>
+        <h3>{props.name} -- {props.type} || ${props.pricePint} per Pint || ${props.price8oz} per 8oz || {props.remainingPints} Pints remaining || {props.alcohol}%abv</h3>
         <h4>This beer is...</h4>
         <p className="test">Seasonal? <em>{props.seasonal}</em></p>
         <p className="test">Brewed by <em>{props.brand}</em></p>
@@ -25,6 +25,7 @@ Keg.propTypes = {
   price8oz: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  alcohol: PropTypes.string.isRequired,
   remainingPints: PropTypes.string.isRequired,
   seasonal: PropTypes.string.isRequired,
   locality: PropTypes.string.isRequired,

@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Component Structure
+<p align="center">
+  <img src="assets/homePage.png" alt="image of component structure" height="80%" width="80%">
+</p>
+
 ## Available Scripts
 
 In the project directory, you can run:

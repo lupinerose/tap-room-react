@@ -1,11 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './Keg.css'
+import { makeStyles } from '@material-ui/styles';
+
+const styles = makeStyles({
+    kegDetail: {
+      backgroundColor: 'white',
+      borderRadius: '25px',
+      padding: '20px',
+      margin: '20px'
+    }
+})
 
 function Keg(props){
+  const classes = styles();
   return(
     <div>
-      <div className="kegDetail">
+      <div className={classes.kegDetail}>
         <h3>{props.name} -- {props.type} || ${props.pricePint} per Pint || ${props.price8oz} per 8oz || {props.remainingPints} Pints remaining || {props.alcohol}%abv</h3>
         <h4>This beer is...</h4>
         <p className="test">Seasonal? <em>{props.seasonal}</em></p>

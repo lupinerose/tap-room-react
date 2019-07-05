@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './EmployeeNav.css'
+import './StyleSheet.css'
 
 function EmployeeNav() {
   return(

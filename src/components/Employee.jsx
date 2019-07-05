@@ -1,6 +1,6 @@
 import KegList from './KegList'
 import React from 'react'
-import './Employee.css'
+import './StyleSheet.css'
 import EmployeeNav from './EmployeeNav';
 
 function Employee() {

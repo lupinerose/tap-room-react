@@ -1,79 +1,51 @@
-## Tap Room
+# Tap Room
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### _React Independent Project 07.04.2019_
+
+#### By _Brooke Kullberg_
+
+## Description
+_This is a point of sale system for a Tap Room. The application has a separate veiw for the employee and patron. The Patron view is what customers will see as a digital menu. They will see a list of all kegs with color coded information. There will also be a search function that allows users to sort by their desired metrics, for example, type of beer, alcohol by volume, or locality._
+
+_The employee view offers the same list of available kegs and search functionalities, but wth more activities. Employees will be able to add and edit kegs, and create an order._
+
+_This application is currently in-progress, so only the welcome page, employee home page, keg list and new keg page work._
+
+_Enjoy!_
 
 ## Project Component Structure
 <p align="center">
   <img src="./src/assets/TapRoomComponentStructure.jpg" alt="image of component structure" height="80%" width="80%">
 </p>
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), which comes with a dev environment set up with Eslint, Babel, Hot Module, and Webpack. Material UI (https://material-ui.com/) is used for styling. Otherwise, JSX, Javascript, HTML and CSS.
 
-### `npm start`
+## Setup/Installation Requirements:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_To download the project:_
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+* _Open via GitHub repository by going to `https://github.com/BrookeZK/tap-room-react`._
+* _In your command line (Terminal or another program), navigate to your desktop._
+* _In your command line, type "git clone `https://github.com/BrookeZK/tap-room-react` to clone the repository to your desktop._
+* _In your command line, navigate into the new folder "iovation-clone"._
+* _Once inside "tap-room-react," type "npm install," and your node package manager (npm) (or whatever package manager you use) will install all of the necessary dependencies._
 
-### `npm test`
+_To run the application:_
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* _In your command line, within the "tap-room-react" project folder, type "npm run start," and Angular will compile the files and your web browser will automatically open the Iovation webpage. If it doesn't, navigate to `http://localhost:3000/`._
 
-### `npm run build`
+## Known Bugs
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_There are no known bugs. Currently there are only the following components built out: Welcome, Employee, EmployeeNav, KegList, Keg, NewKeg and App._
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Support and contact details
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_Should any problems occur, or any bugs discovered, please contact Brooke at brookekullberg@gmail.com_
 
-### `npm run eject`
+### License
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+*This software is licensed under MIT license.*
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-
-#### Notes
-Babel-loader, eslint, webpack are all added to project via create-react-app project
+Copyright (c) 2019 **_Brooke Kullberg_**

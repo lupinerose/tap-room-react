@@ -103,7 +103,7 @@ class KegControl extends React.Component{
   }
 
   handleEmployeeOrPatronLink(property) {
-    console.log("click!")
+    console.log(property)
     if( property === "employee") {
       this.setState ({
         isWelcome: false,

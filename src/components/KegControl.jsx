@@ -3,7 +3,6 @@ import './StyleSheet.css'
 import Welcome from './Welcome'
 import Employee from './Employee'
 import Patron from './Patron'
-import { thisExpression } from '@babel/types';
 
 let masterKegList = [
   {
@@ -128,3 +127,5 @@ class KegControl extends React.Component{
   }
 
 }
+
+export default KegControl;

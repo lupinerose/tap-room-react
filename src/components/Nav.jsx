@@ -16,9 +16,9 @@ function Nav(props) {
       {props.view === 'patron' && 
         <div>
           <h2>Sort by... </h2>
-          <h1 className="center link">ABV</h1><br/>
-          <h1 className="center link">Price</h1><br/>
-          <h1 className="center link">Seasonal</h1>
+          <h1 className="center link" onClick={props.onSortSelection}>ABV</h1><br/>
+          <h1 className="center link" onClick={props.onSortSelection}>Price</h1><br/>
+          <h1 className="center link" onClick={props.onSortSelection}>Seasonal</h1>
         </div>
       }
     </div>
@@ -27,7 +27,8 @@ function Nav(props) {
 
 Nav.propTypes = {
   view: PropTypes.string.isRequired,
-  onNavigationSelection: PropTypes.func.isRequired
+  onNavigationSelection: PropTypes.func.isRequired,
+  onSortSelection: PropTypes.func.isRequired
 }
 
 export default Nav

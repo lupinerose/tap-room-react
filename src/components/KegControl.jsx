@@ -101,7 +101,7 @@ class KegControl extends React.Component{
       sortType: 'all'
     }
     this.handleEmployeeOrPatronClick = this.handleEmployeeOrPatronClick.bind(this)
-    this.handleNavigationSelection = this.handleNavigationSelection.bind(this)
+    this.handleEmployeeNavigationSelection = this.handleEmployeeNavigationSelection.bind(this)
     this.handleSortSelection = this.handleSortSelection.bind(this)
     this.compareForAlcohol = this.compareForAlcohol.bind(this)
     this.compareForPrice = this.compareForPrice.bind(this)
@@ -121,7 +121,7 @@ class KegControl extends React.Component{
     }
   }
 
-  handleNavigationSelection(type) {
+  handleEmployeeNavigationSelection(type) {
 
   }
 
@@ -194,7 +194,7 @@ class KegControl extends React.Component{
         {!this.state.isWelcome &&
           <div className="layout">
             <div className="navArea">
-            <Nav view={this.state.view} onNavigationSelection={this.handleNavigationSelection} onSortSelection={this.handleSortSelection}/>}
+            <Nav view={this.state.view} onNavigationSelection={this.handleEmployeeNavigationSelection} onSortSelection={this.handleSortSelection}/>}
             </div>
             <div className="pageTitle">
               <h1>Keg List - {this.state.view}</h1>

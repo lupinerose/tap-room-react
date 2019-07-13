@@ -7,10 +7,10 @@ function Nav(props) {
     <div className="stack">
       {props.view === 'employee' &&
         <div>
-          <h1 className="center red-text link">New Order</h1><br/>
-          <h1 className="center link">New Keg</h1><br/>
-          <h1 className="center link">Search Kegs</h1><br/>
-          <h1 className="center link">Edit Keg</h1>
+          <h1 className="center red-text link" onCLick={() => {props.onNavigationSelection('newOrder')}}>New Order</h1><br/>
+          <h1 className="center link" onCLick={() => {props.onNavigationSelection('newKeg')}}>New Keg</h1><br/>
+          <h1 className="center link" onCLick={() => {props.onNavigationSelection('searchKegs')}}>Search Kegs</h1><br/>
+          <h1 className="center link" onCLick={() => {props.onNavigationSelection('editKegs')}}>Edit Keg</h1>
         </div>
       }
       {props.view === 'patron' && 

@@ -8,9 +8,9 @@ function Welcome(props) {
   return (
     <div className="Welcome">
       <header className="Welcome-header">
-        <Link to="/employee" onClick={props.onEmployeeOrPatronClick} className="link">Employee</Link>
+        <Link to="/employee" onClick={() => props.onEmployeeOrPatronClick("employee")} className="link">Employee</Link>
         <img src={logo} className="Welcome-logo" alt="logo" />
-        <Link to="/patron" onClick={props.onEmployeeOrPatronClick} className="link">Patron</Link>
+        <Link to="/patron" onClick={() => props.onEmployeeOrPatronClick("patron")} className="link">Patron</Link>
       </header>
     </div>
   )

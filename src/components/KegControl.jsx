@@ -3,6 +3,7 @@ import './StyleSheet.css'
 import Welcome from './Welcome'
 import Employee from './Employee'
 import Patron from './Patron'
+import { thisExpression } from '@babel/types';
 
 let masterKegList = [
   {
@@ -101,8 +102,16 @@ class KegControl extends React.Component{
     this.handleEmployeeOrPatronLink = this.handleEmployeeOrPatronLink.bind(this)
   }
 
-  handleEmployeeOrPatronLink() {
-
+  handleEmployeeOrPatronLink(property) {
+    if( property === "employee") {
+      this.setState ({
+        isEmployee: true
+      })
+    } else {
+      this.setState({
+        isPatron: true
+      })
+    }
   }
 
   render() {

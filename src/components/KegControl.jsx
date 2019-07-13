@@ -103,6 +103,7 @@ class KegControl extends React.Component{
     this.handleEmployeeOrPatronClick = this.handleEmployeeOrPatronClick.bind(this)
     this.handleNavigationSelection = this.handleNavigationSelection.bind(this)
     this.handleSortSelection = this.handleSortSelection.bind(this)
+    this.compare = this.compare.bind(this)
   }
 
   handleEmployeeOrPatronClick(type) {
@@ -123,10 +124,23 @@ class KegControl extends React.Component{
 
   }
 
+  compare(a, b){
+    const priceA = a.pricePint
+    const priceB = b.pricePint
+  
+    let comparison = 0;
+    if (priceA > priceB) {
+      comparison = 1;
+    } else if (priceA < priceB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
   handleSortSelection(type) {
     let sort = type
     let newKegList = this.state.kegList.slice()
-    newKegList.sort(newKegList.pricePint)
+    newKegList.sort(this.compare)
     this.setState({
       sortType: sort,
       kegList: newKegList
@@ -134,6 +148,7 @@ class KegControl extends React.Component{
   }
 
   render() {
+    console.log(this.state.kegList)
     return(
       <div>
         {this.state.isWelcome && <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronClick}/>}

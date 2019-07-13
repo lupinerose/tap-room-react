@@ -8,11 +8,13 @@ class KegControl extends React.Component{
   constructor() {
     super()
     this.state = {
-
+      isEmployee: false, 
+      isPatron: false
     }
+    this.handleEmployeeOrPatronLink = this.handleEmployeeOrPatronLink.bind(this)
   }
 
-  var masterKegList = [
+  let masterKegList = [
     {
       name: 'Thunderhead',
       pricePint: '5',
@@ -99,11 +101,15 @@ class KegControl extends React.Component{
     }
   ]
 
+  handleEmployeeOrPatronLink() {
+
+  }
+
   render() {
     return(
       <div>
-        {isEmployee ? <Employee /> : <Welcome />}
-        {isPatron ? <Patron /> : <Welcome />}
+        {isEmployee ? <Employee masterKegList={this.masterKegList}/> : <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronLink}/>}
+        {isPatron ? <Patron masterKegList={this.masterKegList}/> : <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronLink}/>}
       </div>
     )
   }

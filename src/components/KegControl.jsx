@@ -100,10 +100,11 @@ class KegControl extends React.Component{
       kegList: masterKegList
     }
     this.handleEmployeeOrPatronClick = this.handleEmployeeOrPatronClick.bind(this)
+    this.handleNavigationSelection = this.handleNavigationSelection.bind(this)
   }
 
-  handleEmployeeOrPatronClick(property) {
-    if(property === "employee") {
+  handleEmployeeOrPatronClick(type) {
+    if(type === "employee") {
       this.setState ({
         isWelcome: false,
         view: 'employee'
@@ -116,7 +117,9 @@ class KegControl extends React.Component{
     }
   }
 
-  
+  handleNavigationSelection(type) {
+
+  }
 
   render() {
     return(
@@ -125,7 +128,7 @@ class KegControl extends React.Component{
         {!this.state.isWelcome &&
           <div className="layout">
             <div className="navArea">
-            <Nav view={this.state.view}/>}
+            <Nav view={this.state.view} onNavigationSelection={this.handleNavigationSelection}/>}
             </div>
             <div className="pageTitle">
               <h1>Keg List - {this.state.view}</h1>

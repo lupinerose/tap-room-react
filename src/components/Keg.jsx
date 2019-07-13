@@ -30,8 +30,8 @@ function Keg(props){
 
 Keg.propTypes = {
   name: PropTypes.string.isRequired,
-  pricePint: PropTypes.number.isRequired,
-  price8oz: PropTypes.number.isRequired,
+  pricePint: PropTypes.string.isRequired,
+  price8oz: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   alcohol: PropTypes.string.isRequired,

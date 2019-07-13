@@ -15,10 +15,11 @@ function Nav(props) {
       }
       {props.view === 'patron' && 
         <div>
-          <h2>Sort by... </h2>
-          <h1 className="center link" onClick={props.onSortSelection}>ABV</h1><br/>
-          <h1 className="center link" onClick={props.onSortSelection}>Price</h1><br/>
-          <h1 className="center link" onClick={props.onSortSelection}>Seasonal</h1>
+          <h1 className="center link" onClick={() => props.onSortSelection('all')}>Show All</h1><br/>
+          <h2>Or Sort by... </h2>
+          <h1 className="center link" onClick={() => props.onSortSelection('abv')}>ABV</h1><br/>
+          <h1 className="center link" onClick={() => props.onSortSelection('price')}>Price</h1><br/>
+          <h1 className="center link" onClick={() => props.onSortSelection('seasonal')}>Seasonal</h1>
         </div>
       }
     </div>

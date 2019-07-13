@@ -97,7 +97,8 @@ class KegControl extends React.Component{
     this.state = {
       isWelcome: true,
       view: '',
-      kegList: masterKegList
+      kegList: masterKegList,
+      sortType: 'all'
     }
     this.handleEmployeeOrPatronClick = this.handleEmployeeOrPatronClick.bind(this)
     this.handleNavigationSelection = this.handleNavigationSelection.bind(this)
@@ -123,7 +124,6 @@ class KegControl extends React.Component{
   }
 
   handleSortSelection(type) {
-
   }
 
   render() {
@@ -139,7 +139,7 @@ class KegControl extends React.Component{
               <h1>Keg List - {this.state.view}</h1>
             </div>
             <div className="kegListArea">
-              <KegList view={this.state.view} kegList={this.state.kegList}/>}
+              <KegList view={this.state.view} sortType={this.state.sortType} kegList={this.state.kegList}/>}
             </div>
           </div> 
         }

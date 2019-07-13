@@ -104,6 +104,7 @@ class KegControl extends React.Component{
     this.handleNavigationSelection = this.handleNavigationSelection.bind(this)
     this.handleSortSelection = this.handleSortSelection.bind(this)
     this.compare = this.compare.bind(this)
+    // this.sort = this.sort.bind(this)
   }
 
   handleEmployeeOrPatronClick(type) {
@@ -124,31 +125,47 @@ class KegControl extends React.Component{
 
   }
 
-  compare(a, b){
-    const priceA = a.pricePint
-    const priceB = b.pricePint
+  compare(a, b, sort){
+    const typeA = a[sort]
+    const typeB = b[sort]
   
     let comparison = 0;
-    if (priceA > priceB) {
+    if (typeA > typeB) {
       comparison = 1;
-    } else if (priceA < priceB) {
+    } else if (typeA < typeB) {
       comparison = -1;
     }
     return comparison;
   }
 
   handleSortSelection(type) {
-    let sort = type
     let newKegList = this.state.kegList.slice()
-    newKegList.sort(this.compare)
-    this.setState({
-      sortType: sort,
-      kegList: newKegList
-    })
+    if (type === 'all') {
+      return (
+      this.setState({
+        kegList: masterKegList,
+        sortType: type
+      }))
+    } else if (type === 'seasonal') {
+      let seasonalList = [];
+        newKegList.forEach((keg) => {if(keg.seasonal === 'yes') { seasonalList.push(keg)}})
+        return(
+        this.setState({
+          kegList: seasonalList,
+          sortType: type
+        }))
+    } else if (type === 'pricePint' || type === 'alcohol') {
+      let sortedList = newKegList.sort(() => {this.compare(type)})
+      return (
+        this.setState({
+          kegList: sortedList,
+          sortType: type
+        }))
+    }
   }
 
   render() {
-    console.log(this.state.kegList)
+    console.log(this.state.sortType)
     return(
       <div>
         {this.state.isWelcome && <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronClick}/>}

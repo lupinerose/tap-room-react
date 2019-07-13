@@ -17,8 +17,8 @@ function Nav(props) {
         <div>
           <h1 className="center link" onClick={() => props.onSortSelection('all')}>Show All</h1><br/>
           <h2>Or Sort by... </h2>
-          <h1 className="center link" onClick={() => props.onSortSelection('abv')}>ABV</h1><br/>
-          <h1 className="center link" onClick={() => props.onSortSelection('price')}>Price</h1><br/>
+          <h1 className="center link" onClick={() => props.onSortSelection('alcohol')}>ABV</h1><br/>
+          <h1 className="center link" onClick={() => props.onSortSelection('pricePint')}>Price</h1><br/>
           <h1 className="center link" onClick={() => props.onSortSelection('seasonal')}>Seasonal</h1>
         </div>
       }

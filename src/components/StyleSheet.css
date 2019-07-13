@@ -14,6 +14,10 @@ body {
   justify-content: center;
 }
 
+.Welcome h1 {
+  color: black;
+}
+
 .Welcome-logo {
   animation: App-logo-pulse infinite 2s linear;
   height: 40vmin;

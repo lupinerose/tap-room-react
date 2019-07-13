@@ -4,7 +4,7 @@ import Welcome from './Welcome'
 import Employee from './Employee'
 import Patron from './Patron'
 
-let masterKegList = [
+var masterKegList = [
   {
     name: 'Thunderhead',
     pricePint: '5',
@@ -12,7 +12,7 @@ let masterKegList = [
     brand: 'Pyramid Brewing Co.',
     type: 'IPA',
     alcohol: '6.7',
-    remainingPints: '124',
+    remainingPints: 124,
     seasonal: 'no',
     locality: 'the Pacific NorthWest',
     city: 'Seattle',
@@ -26,7 +26,7 @@ let masterKegList = [
     brand: 'Lompoc Brewing Co.',
     type: 'Red Ale',
     alcohol: '6',
-    remainingPints: '64',
+    remainingPints: 64,
     seasonal: 'no',
     locality: 'Town',
     city: 'Portland',
@@ -40,7 +40,7 @@ let masterKegList = [
     brand: 'Ninkasi Brewing Co.',
     type: 'Dark Double Alt Ale',
     alcohol: '7.8',
-    remainingPints: '20',
+    remainingPints: 20,
     seasonal: 'yes',
     locality: 'State',
     city: 'Eugene',
@@ -54,7 +54,7 @@ let masterKegList = [
     brand: 'Cervecería Modelo',
     type: 'Pale Lager',
     alcohol: '4.5',
-    remainingPints: '9',
+    remainingPints: 9,
     seasonal: 'no',
     locality: 'Earth',
     city: '',
@@ -68,7 +68,7 @@ let masterKegList = [
     brand: 'Sabeco',
     type: 'Lager',
     alcohol: '5',
-    remainingPints: '124',
+    remainingPints: 124,
     seasonal: 'no',
     locality: 'Earth',
     city: 'Ho Chi Minh City',
@@ -82,7 +82,7 @@ let masterKegList = [
     brand: 'Pabst Brewing Co.',
     type: 'Lager',
     alcohol: '4',
-    remainingPints: '53',
+    remainingPints: 53,
     seasonal: 'no',
     locality: 'the Midwest',
     city: 'Milwaukee',
@@ -97,9 +97,12 @@ class KegControl extends React.Component{
     this.state = {
       isWelcome: true,
       isEmployee: false, 
-      isPatron: false
+      isPatron: false,
+      kegList: masterKegList
     }
     this.handleEmployeeOrPatronLink = this.handleEmployeeOrPatronLink.bind(this)
+    console.log(masterKegList)
+    console.log(this.state.kegList)
   }
 
   handleEmployeeOrPatronLink(property) {
@@ -118,12 +121,14 @@ class KegControl extends React.Component{
     console.log(this.state.isEmployee)
   }
 
+  
+
   render() {
     return(
       <div>
           {this.state.isWelcome ? <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronLink}/> : null}
-          {this.state.isEmployee ? <Employee masterKegList={masterKegList}/> : null}
-          {this.state.isPatron ? <Patron masterKegList={masterKegList}/> : null}
+          {this.state.isEmployee ? <Employee kegList={this.state.kegList}/> : null}
+          {this.state.isPatron ? <Patron kegList={this.state.kegList}/> : null}
       </div>
     )
   }

@@ -1,19 +1,15 @@
 import React from 'react'
 import logo from '../assets/taproomlogo.jpg'
 import './StyleSheet.css'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 function Welcome(props) {
   return (
     <div className="Welcome">
       <header className="Welcome-header">
-        {/* <button onClick={() => props.onEmployeeOrPatronClick("employee")} className="link">Employee</button>
+        <h1 onClick={() => props.onEmployeeOrPatronClick("employee")} className="link">Employee</h1>
         <img src={logo} className="Welcome-logo" alt="logo" />
-        <button onClick={() => props.onEmployeeOrPatronClick("patron")} className="link">Patron</button> */}
-        <Link to="/employee" onClick={() => props.onEmployeeOrPatronClick("employee")} className="link">Employee</Link>
-        <img src={logo} className="Welcome-logo" alt="logo" />
-        <Link to="/patron" onClick={() => props.onEmployeeOrPatronClick("patron")} className="link">Patron</Link>
+        <h1 onClick={() => props.onEmployeeOrPatronClick("patron")} className="link">Patron</h1>
       </header>
     </div>
   )

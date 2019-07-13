@@ -5,6 +5,7 @@ import EmployeeNav from './EmployeeNav';
 import PropTypes from 'prop-types';
 
 function Employee(props) {
+  console.log(props.kegList)
   return(
     <div className="layout">
       <div className="navArea">
@@ -14,14 +15,14 @@ function Employee(props) {
         <h1>Keg List</h1>
       </div>
       <div className="kegListArea">
-        <KegList masterKegList={props.masterKegList}/>
+        <KegList kegList={props.kegList}/>
       </div>
     </div>
   )
 }
 
 Employee.propTypes = {
-  masterKegList: PropTypes.array.isRequired
+  kegList: PropTypes.array
 }
 
 export default Employee

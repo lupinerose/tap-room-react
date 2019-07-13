@@ -1,11 +1,10 @@
 import KegList from './KegList'
 import React from 'react'
 import './StyleSheet.css'
-import EmployeeNav from './EmployeeNav';
+import EmployeeNav from './Nav';
 import PropTypes from 'prop-types';
 
 function Employee(props) {
-  console.log(props.kegList)
   return(
     <div className="layout">
       <div className="navArea">

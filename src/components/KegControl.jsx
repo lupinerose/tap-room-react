@@ -1,8 +1,8 @@
 import React from 'react'
 import './StyleSheet.css'
 import Welcome from './Welcome'
-import Employee from './Employee'
-import Patron from './Patron'
+import Nav from './Nav'
+import KegList from './KegList'
 
 var masterKegList = [
   {
@@ -96,29 +96,24 @@ class KegControl extends React.Component{
     super()
     this.state = {
       isWelcome: true,
-      isEmployee: false, 
-      isPatron: false,
+      view: '',
       kegList: masterKegList
     }
-    this.handleEmployeeOrPatronLink = this.handleEmployeeOrPatronLink.bind(this)
-    console.log(masterKegList)
-    console.log(this.state.kegList)
+    this.handleEmployeeOrPatronClick = this.handleEmployeeOrPatronClick.bind(this)
   }
 
-  handleEmployeeOrPatronLink(property) {
-    console.log(property)
-    if( property === "employee") {
+  handleEmployeeOrPatronClick(property) {
+    if(property === "employee") {
       this.setState ({
         isWelcome: false,
-        isEmployee: true
+        view: 'employee'
       })
     } else {
       this.setState({
         isWelcome: false,
-        isPatron: true
+        view: 'patron'
       })
     }
-    console.log(this.state.isEmployee)
   }
 
   
@@ -126,9 +121,20 @@ class KegControl extends React.Component{
   render() {
     return(
       <div>
-          {this.state.isWelcome ? <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronLink}/> : null}
-          {this.state.isEmployee ? <Employee kegList={this.state.kegList}/> : null}
-          {this.state.isPatron ? <Patron kegList={this.state.kegList}/> : null}
+        {this.state.isWelcome && <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronClick}/>}
+        {!this.state.isWelcome &&
+          <div className="layout">
+            <div className="navArea">
+            <Nav view={this.state.view}/>}
+            </div>
+            <div className="pageTitle">
+              <h1>Keg List - {this.state.view}</h1>
+            </div>
+            <div className="kegListArea">
+              <KegList view={this.state.view} kegList={this.state.kegList}/>}
+            </div>
+          </div> 
+        }
       </div>
     )
   }

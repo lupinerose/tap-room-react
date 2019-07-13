@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployeeNav from './EmployeeNav'
+import EmployeeNav from './Nav'
 import './StyleSheet.css'
 
 function NewKeg() {

@@ -110,6 +110,7 @@ class KegControl extends React.Component{
     this.compareForAlcohol = this.compareForAlcohol.bind(this)
     this.compareForPrice = this.compareForPrice.bind(this)
     this.handleNewKeg = this.handleNewKeg.bind(this)
+    this.handleBackButton = this.handleBackButton.bind(this)
   }
 
   handleEmployeeOrPatronClick(type) {
@@ -207,10 +208,20 @@ class KegControl extends React.Component{
     let newKegList = this.state.kegList
     newKegList.push(keg)
     this.setState({
+      isEmployee: true,
+      view: 'Employee Keg List',
+      employeeOperation: false,
       kegList: newKegList
     })
   }
 
+  handleBackButton() {
+    this.setState({
+      isEmployee: true,
+      view: 'Employee Keg List',
+      employeeOperation: false
+    })
+  }
   render() {
     console.log(this.state.sortType)
     return(
@@ -229,7 +240,7 @@ class KegControl extends React.Component{
             </div>
           </div> 
         }
-        {this.state.employeeOperation ? <NewKeg view={this.state.view} onNewKeg={this.handleNewKeg}/> : null}
+        {this.state.employeeOperation ? <NewKeg onBackButton={this.handleBackButton} view={this.state.view} onNewKeg={this.handleNewKeg}/> : null}
       </div>
     )
   }

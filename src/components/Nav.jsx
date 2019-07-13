@@ -5,15 +5,15 @@ import PropTypes from 'prop-types'
 function Nav(props) {
   return(
     <div className="stack">
-      {props.view === 'employee' &&
+      {props.view === 'Employee Keg List' &&
         <div>
-          <h1 className="center red-text link" onCLick={() => {props.onNavigationSelection('newOrder')}}>New Order</h1><br/>
-          <h1 className="center link" onCLick={() => {props.onNavigationSelection('newKeg')}}>New Keg</h1><br/>
-          <h1 className="center link" onCLick={() => {props.onNavigationSelection('searchKegs')}}>Search Kegs</h1><br/>
-          <h1 className="center link" onCLick={() => {props.onNavigationSelection('editKegs')}}>Edit Keg</h1>
+          <h1 className="center red-text link" onClick={() => {props.onNavigationSelection('New Order')}}>New Order</h1><br/>
+          <h1 className="center link" onClick={() => {props.onNavigationSelection('Add New Keg')}}>New Keg</h1><br/>
+          <h1 className="center link" onClick={() => {props.onNavigationSelection('Search Kegs')}}>Search Kegs</h1><br/>
+          <h1 className="center link" onClick={() => {props.onNavigationSelection('Edit Keg')}}>Edit Keg</h1>
         </div>
       }
-      {props.view === 'patron' && 
+      {props.view === 'The Tap Room' && 
         <div>
           <h1 className="center link" onClick={() => props.onSortSelection('all')}>Show All</h1><br/>
           <h1 className="center link" onClick={() => props.onSortSelection('seasonal')}>Show Seasonal</h1>

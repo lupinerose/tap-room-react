@@ -108,21 +108,21 @@ class KegControl extends React.Component{
   }
 
   handleEmployeeOrPatronClick(type) {
-    if(type === "employee") {
+    if(type === "Employee Keg List") {
       this.setState ({
         isWelcome: false,
-        view: 'employee'
+        view: 'Employee Keg List'
       })
     } else {
       this.setState({
         isWelcome: false,
-        view: 'patron'
+        view: 'The Tap Room'
       })
     }
   }
 
   handleEmployeeNavigationSelection(type) {
-
+    console.log(type)
   }
 
   compareForAlcohol(a, b){
@@ -197,13 +197,14 @@ class KegControl extends React.Component{
             <Nav view={this.state.view} onNavigationSelection={this.handleEmployeeNavigationSelection} onSortSelection={this.handleSortSelection}/>}
             </div>
             <div className="pageTitle">
-              <h1>Keg List - {this.state.view}</h1>
+              <h1>{this.state.view}</h1>
             </div>
             <div className="kegListArea">
               <KegList view={this.state.view} sortType={this.state.sortType} kegList={this.state.kegList}/>}
             </div>
           </div> 
         }
+        {this.state.view === 'searchKegs'}
       </div>
     )
   }

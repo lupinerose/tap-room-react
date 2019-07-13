@@ -18,11 +18,9 @@ function Keg(props){
       <div className={classes.kegDetail}>
         <h3>{props.name} -- {props.type} || ${props.pricePint} per Pint || ${props.price8oz} per 8oz || {props.remainingPints} Pints remaining || {props.alcohol}%abv</h3>
         <h4>This beer is...</h4>
+        <p className="test">Brewed by <em>{props.brand}</em> from {props.city}{props.state}. 100% local to <em>{props.locality}</em></p>
         <p className="test">Seasonal? <em>{props.seasonal}</em></p>
-        <p className="test">Brewed by <em>{props.brand}</em></p>
-        <p className="test">Local to <em>{props.locality}</em></p>
-        <p className="test">Brewed in <em>{props.city}{props.state}</em></p>
-        <p className="test">In the great <em>{props.country}</em></p>
+        <p className="test">Country of Origin: <em>{props.country}</em></p>
       </div>
     </div>
   )

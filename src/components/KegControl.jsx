@@ -1,4 +1,8 @@
 import React from 'react'
+import './StyleSheet.css'
+import Welcome from './Welcome'
+import Employee from './Employee'
+import Patron from './Patron'
 
 class KegControl extends React.Component{
   constructor() {
@@ -98,7 +102,8 @@ class KegControl extends React.Component{
   render() {
     return(
       <div>
-        
+        {isEmployee ? <Employee /> : <Welcome />}
+        {isPatron ? <Patron /> : <Welcome />}
       </div>
     )
   }

@@ -15,7 +15,10 @@ function Nav(props) {
       }
       {props.view === 'patron' && 
         <div>
-          <h2>Sort Kegs our kegs </h2>
+          <h2>Sort by... </h2>
+          <h1 className="center link">ABV</h1><br/>
+          <h1 className="center link">Price</h1><br/>
+          <h1 className="center link">Seasonal</h1>
         </div>
       }
     </div>

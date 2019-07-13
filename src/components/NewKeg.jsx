@@ -1,63 +1,92 @@
 import React from 'react'
-import EmployeeNav from './Nav'
 import './StyleSheet.css'
+import PropTypes from 'prop-types'
 
-function NewKeg() {
+function NewKeg(props) {
+  let _beer = null;
+  let _type = null;
+  let _brewery = null;
+  let _alcohol = null;
+  let _seasonal = null;
+  let _locality = null;
+  let _city = null;
+  let _state = null;
+  let _country = null;
+
+  function handleNewKegFormSubmit(event) {
+    event.preventDefault();
+    props.onNewKeg({beer: _beer.value, type: _type.value, brewery: _brewery.value, alcohol: _alcohol.value, seasonal: _seasonal.value, _locality: _locality.value, city: _city.value, state: _state.value, country: _country.value})
+    _beer.value = '';
+    _type.value = '';
+    _brewery.value = '';
+    _alcohol.value = '';
+    _seasonal.value = '';
+    _locality.value = '';
+    _city.value = '';
+    _state.value = '';
+    _country.value = '';
+  }
+
   return(
     <div className="layout">
       <div className="navArea">
-        <EmployeeNav/>
-      </div>
-      <div className="pageTitle">
-        <h1>Add New Keg</h1>
-      </div>
-      <div className="kegListArea">
-        <div className="formArea">
-          <div>
-            <label name="beer">Name</label><br/><br/>
-            <label name="type">Type</label><br/><br/>
-            <label name="alcohol">Alcohol Content</label><br/><br/>
-            <label name="brewery">Brewery</label><br/><br/>
-          </div>
-          <div>
-            <input id="beer" type="text" ref={(input) => {_beer = input;}}/><br/><br/>
-            <select type='text' id='type' ref={(select) => {_type = select;}}>
-              <option id='IPA' value="IPA">Yes</option>
-              <option id='Red Ale' value="Red Ale">No</option>
-              <option id='Dark Double Alt Ale' value="Dark Double Alt Ale">Yes</option>
-              <option id='Pale Lager' value="Pale Lager">No</option>
-              <option id='Lager' value="Lager">Yes</option>
-            </select>
-            <input id="alcohol" type="text" ref={(input) => {_alcohol = input;}}/><br/><br/>
-            <input id="brewery" type="text" ref={(input) => {_brewery = input;}}/>
-          </div>
-          <div>
-            <label>Seasonal</label><br/><br/>
-            <label>Locality</label><br/><br/>
-            <label>City</label><br/><br/>
-            <label>State</label><br/><br/>
-            <label>Country</label>
-          </div>
-          <div>
-          <select type='text' id='seasonal' ref={(select) => {_seasonal = select;}}>
-            <option id='yes' value="yes">Yes</option>
-            <option id='no' value="no">No</option>
-          </select>
-          <select type='text' id='locality' ref={(select) => {_locality = select;}}>
-            <option id='the Midwest' value="the Midwest">Yes</option>
-            <option id='Earth' value="Earth">No</option>
-            <option id='State' value="State">Yes</option>
-            <option id='Town' value="Town">No</option>
-            <option id='the Pacific NorthWest' value="the Pacific NorthWest">Yes</option>
-          </select>
-            <input id="city" type="text" ref={(input) => {_city = input;}}/><br/><br/>
-            <input id="state" type="text" ref={(input) => {_state = input;}}/><br/><br/>
-            <input id="country" type="text" ref={(input) => {_country = input;}}/>
+        <div className="stack">
+          <div className="center link">
+            <h1>Back</h1>
           </div>
         </div>
       </div>
+      <div className="pageTitle">
+        <h1>{props.view}</h1>
+      </div>
+      <div className="kegListArea">
+        <form className="formArea" onSubmit={handleNewKegFormSubmit}>
+          <div>
+            <label name="beer">Name</label>
+            <input id="beer" type="text" ref={(input) => {_beer = input;}}/><br/><br/>
+            <label name="type">Type</label>
+            <select type='text' id='type' ref={(select) => {_type = select;}}>
+              <option id='IPA' value="IPA">IPA</option>
+              <option id='Red Ale' value="Red Ale">Red Ale</option>
+              <option id='Dark Double Alt Ale' value="Dark Double Alt Ale">Dark Double Alt Ale</option>
+              <option id='Pale Lager' value="Pale Lager">Pale Lager</option>
+              <option id='Lager' value="Lager">Lager</option>
+            </select><br/><br/>
+            <label name="alcohol">ABV</label>
+            <input id="alcohol" type="text" ref={(input) => {_alcohol = input;}}/><br/><br/>
+            <label name="brewery">Brewery</label>
+            <input id="brewery" type="text" ref={(input) => {_brewery = input;}}/>
+          </div>
+          <div>
+            <label>Seasonal</label>
+            <select type='text' id='seasonal' ref={(select) => {_seasonal = select;}}>
+              <option id='yes' value="yes">Yes</option>
+              <option id='no' value="no">No</option>
+            </select><br/><br/>
+            <label>Locality</label>
+            <select type='text' id='locality' ref={(select) => {_locality = select;}}>
+              <option id='the Midwest' value="the Midwest">the Midwest</option>
+              <option id='Earth' value="Earth">Earth</option>
+              <option id='State' value="State">State</option>
+              <option id='Town' value="Town">Town</option>
+              <option id='the Pacific NorthWest' value="the Pacific NorthWest">the Pacific NorthWest</option>
+            </select><br/><br/>
+            <label>City</label>
+            <input id="city" type="text" ref={(input) => {_city = input;}}/><br/><br/>
+            <label>State</label>
+            <input id="state" type="text" ref={(input) => {_state = input;}}/><br/><br/>
+            <label>Country</label>
+            <input id="country" type="text" ref={(input) => {_country = input;}}/>
+          </div>
+          <button type='submit'>Add Keg</button>
+        </form>
+      </div>
     </div>
   )
+}
+
+NewKeg.propTypes = {
+  view: PropTypes.string.isRequired
 }
 
 export default NewKeg

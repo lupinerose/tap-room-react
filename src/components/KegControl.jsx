@@ -3,6 +3,7 @@ import './StyleSheet.css'
 import Welcome from './Welcome'
 import Nav from './Nav'
 import KegList from './KegList'
+import NewKeg from './NewKeg'
 
 var masterKegList = [
   {
@@ -96,26 +97,34 @@ class KegControl extends React.Component{
     super()
     this.state = {
       isWelcome: true,
+      isEmployee: true,
+      isPatron: true,
       view: '',
       kegList: masterKegList,
-      sortType: 'all'
+      sortType: 'all',
+      employeeOperation: false
     }
     this.handleEmployeeOrPatronClick = this.handleEmployeeOrPatronClick.bind(this)
     this.handleEmployeeNavigationSelection = this.handleEmployeeNavigationSelection.bind(this)
     this.handleSortSelection = this.handleSortSelection.bind(this)
     this.compareForAlcohol = this.compareForAlcohol.bind(this)
     this.compareForPrice = this.compareForPrice.bind(this)
+    this.handleNewKeg = this.handleNewKeg.bind(this)
   }
 
   handleEmployeeOrPatronClick(type) {
     if(type === "Employee Keg List") {
       this.setState ({
         isWelcome: false,
+        isPatron: false,
+        isEmployee: true,
         view: 'Employee Keg List'
       })
     } else {
       this.setState({
         isWelcome: false,
+        isPatron: true,
+        isEmployee: false,
         view: 'The Tap Room'
       })
     }
@@ -123,6 +132,14 @@ class KegControl extends React.Component{
 
   handleEmployeeNavigationSelection(type) {
     console.log(type)
+    if(type === "Add New Keg") {
+      this.setState ({
+        view: 'Add New Keg',
+        isEmployee: false,
+        employeeOperation: true
+      })
+    } else {
+    }
   }
 
   compareForAlcohol(a, b){
@@ -186,12 +203,20 @@ class KegControl extends React.Component{
     }
   }
 
+  handleNewKeg(keg) {
+    let newKegList = this.state.kegList
+    newKegList.push(keg)
+    this.setState({
+      kegList: newKegList
+    })
+  }
+
   render() {
     console.log(this.state.sortType)
     return(
       <div>
         {this.state.isWelcome && <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronClick}/>}
-        {!this.state.isWelcome &&
+        {(this.state.isPatron || this.state.isEmployee) &&
           <div className="layout">
             <div className="navArea">
             <Nav view={this.state.view} onNavigationSelection={this.handleEmployeeNavigationSelection} onSortSelection={this.handleSortSelection}/>}
@@ -204,7 +229,7 @@ class KegControl extends React.Component{
             </div>
           </div> 
         }
-        {this.state.view === 'searchKegs'}
+        {this.state.employeeOperation ? <NewKeg view={this.state.view} onNewKeg={this.handleNewKeg}/> : null}
       </div>
     )
   }

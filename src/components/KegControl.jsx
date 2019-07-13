@@ -124,6 +124,13 @@ class KegControl extends React.Component{
   }
 
   handleSortSelection(type) {
+    let sort = type
+    let newKegList = this.state.kegList.slice()
+    newKegList.sort(newKegList.pricePint)
+    this.setState({
+      sortType: sort,
+      kegList: newKegList
+    })
   }
 
   render() {

@@ -25,7 +25,9 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.array.isRequired,
+  view: PropTypes.string.isRequired,
+  sortType: PropTypes.string.isRequired
 }
 
 export default KegList

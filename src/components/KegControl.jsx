@@ -95,6 +95,7 @@ class KegControl extends React.Component{
   constructor() {
     super()
     this.state = {
+      isWelcome: true,
       isEmployee: false, 
       isPatron: false
     }
@@ -102,26 +103,27 @@ class KegControl extends React.Component{
   }
 
   handleEmployeeOrPatronLink(property) {
+    console.log("click!")
     if( property === "employee") {
       this.setState ({
+        isWelcome: false,
         isEmployee: true
       })
     } else {
       this.setState({
+        isWelcome: false,
         isPatron: true
       })
     }
+    console.log(this.state.isEmployee)
   }
 
   render() {
     return(
       <div>
-        <div>
-          {isEmployee ? <Employee masterKegList={masterKegList}/> : <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronLink}/>}
-        </div>
-        <div>
-          {isPatron ? <Patron masterKegList={masterKegList}/> : <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronLink}/>}
-        </div>
+          {this.state.isWelcome ? <Welcome onEmployeeOrPatronClick={this.handleEmployeeOrPatronLink}/> : null}
+          {this.state.isEmployee ? <Employee masterKegList={masterKegList}/> : null}
+          {this.state.isPatron ? <Patron masterKegList={masterKegList}/> : null}
       </div>
     )
   }

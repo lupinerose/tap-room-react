@@ -1,12 +1,12 @@
 import React from 'react'
-import Keg from './Keg'
+// import Keg from './Keg'
 
 
 
 function KegList(){
   return(
     <div>
-      {masterKegList.map((keg, index) => 
+      {/* {masterKegList.map((keg, index) => 
         <Keg name={keg.name}
           pricePint={keg.pricePint}
           price8oz={keg.price8oz}
@@ -20,7 +20,7 @@ function KegList(){
           state={keg.state}
           country={keg.country}
           key={index}/>
-      )}
+      )} */}
     </div>
   )
 }

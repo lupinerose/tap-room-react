@@ -81,7 +81,7 @@ var masterKegList = [
     price8oz: 1.50,
     brand: 'Pabst Brewing Co.',
     type: 'Lager',
-    alcohol: 4,
+    alcohol: 4.6,
     remainingPints: 53,
     seasonal: 'no',
     locality: 'the Midwest',
@@ -103,8 +103,8 @@ class KegControl extends React.Component{
     this.handleEmployeeOrPatronClick = this.handleEmployeeOrPatronClick.bind(this)
     this.handleNavigationSelection = this.handleNavigationSelection.bind(this)
     this.handleSortSelection = this.handleSortSelection.bind(this)
-    this.compare = this.compare.bind(this)
-    // this.sort = this.sort.bind(this)
+    this.compareForAlcohol = this.compareForAlcohol.bind(this)
+    this.compareForPrice = this.compareForPrice.bind(this)
   }
 
   handleEmployeeOrPatronClick(type) {
@@ -125,9 +125,22 @@ class KegControl extends React.Component{
 
   }
 
-  compare(a, b, sort){
-    const typeA = a[sort]
-    const typeB = b[sort]
+  compareForAlcohol(a, b){
+    const typeA = a.alcohol
+    const typeB = b.alcohol
+  
+    let comparison = 0;
+    if (typeA > typeB) {
+      comparison = 1;
+    } else if (typeA < typeB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
+  compareForPrice(a, b){
+    const typeA = a.pricePint
+    const typeB = b.pricePint
   
     let comparison = 0;
     if (typeA > typeB) {
@@ -139,26 +152,35 @@ class KegControl extends React.Component{
   }
 
   handleSortSelection(type) {
-    let newKegList = this.state.kegList.slice()
+    let newKegList = masterKegList
+    console.log(newKegList)
     if (type === 'all') {
+      newKegList = masterKegList
       return (
       this.setState({
-        kegList: masterKegList,
+        kegList: newKegList,
         sortType: type
       }))
     } else if (type === 'seasonal') {
       let seasonalList = [];
-        newKegList.forEach((keg) => {if(keg.seasonal === 'yes') { seasonalList.push(keg)}})
-        return(
-        this.setState({
-          kegList: seasonalList,
-          sortType: type
-        }))
-    } else if (type === 'pricePint' || type === 'alcohol') {
-      let sortedList = newKegList.sort(() => {this.compare(type)})
+      newKegList.forEach((keg) => {if(keg.seasonal === 'yes') { seasonalList.push(keg)}})
+      return(
+      this.setState({
+        kegList: seasonalList,
+        sortType: type
+      }))
+    } else if (type === 'pricePint') {
+      newKegList.sort(this.compareForPrice)
       return (
         this.setState({
-          kegList: sortedList,
+          kegList: newKegList,
+          sortType: type
+        }))
+    } else if (type === 'alcohol') {
+      newKegList.sort(this.compareForAlcohol)
+      return (
+        this.setState({
+          kegList: newKegList,
           sortType: type
         }))
     }

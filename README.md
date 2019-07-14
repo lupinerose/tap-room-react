@@ -13,10 +13,16 @@ _This application is currently in-progress, so only the welcome page, employee h
 
 _Enjoy!_
 
-## Project Component Structure
+## Project Component Structure - Round 1
 <p align="center">
-  <img src="./src/assets/TapRoomComponentStructure.jpg" alt="image of component structure" height="80%" width="80%">
+  <img src="./src/assets/TapRoomComponentStructure.jpg" alt="image of 1st component structure" height="80%" width="80%">
 </p>
+
+## Project Component Structure - Round 2
+<p align="center">
+  <img src="./src/assets/TapRoomComponentTree2.jpg" alt="image of 2nd component structure" height="80%" width="80%">
+</p>
+
 
 ## Technologies Used
 
@@ -38,7 +44,9 @@ _To run the application:_
 
 ## Known Bugs
 
-_There are no known bugs. Currently there are only the following components built out: Welcome, Employee, EmployeeNav, KegList, Keg, NewKeg and App._
+_The is 1 known bug: within the Patron view, after selecting to sort by ascending order of alcohol by volume or price, and then re-selecting 'show all', the keg list does not revert to original master list, even though it is coded to do so._ 
+
+_Currently only the following components are built out: App, Welcome, KegControl, KegList, Keg, Nav, NewKeg._
 
 ## Support and contact details
 

@@ -242,7 +242,7 @@ class KegControl extends React.Component{
               <h1>{this.state.view}</h1>
             </div>
             <div className="kegListArea">
-              <KegList view={this.state.view} sortType={this.state.sortType} kegList={this.state.kegList}/>}
+              <KegList view={this.state.view} sortType={this.state.sortType} kegList={this.state.kegList}/>
             </div>
           </div> 
         }

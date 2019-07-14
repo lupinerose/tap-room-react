@@ -23,7 +23,7 @@ function NewKeg(props) {
     let parsed8ozPrice = parseFloat(_price8oz.value)
     let parsedPintsRemaining = parseFloat(_remainingPints.value)
     let parsedABV = parseFloat(_alcohol.value)
-    props.onNewKeg({name: _name.value, pricePint: parsedPintPrice, price8oz: parsed8ozPrice, brand: _brand.value, type: _type.value, alcohol: parsedABV, remainingPints: parsedPintsRemaining, seasonal: _seasonal.value, _locality: _locality.value, city: _city.value, state: _state.value, country: _country.value})
+    props.onNewKeg({name: _name.value, pricePint: parsedPintPrice, price8oz: parsed8ozPrice, brand: _brand.value, type: _type.value, alcohol: parsedABV, remainingPints: parsedPintsRemaining, seasonal: _seasonal.value, locality: _locality.value, city: _city.value, state: _state.value, country: _country.value})
     _name.value = '';
     _pricePint.value = '';
     _price8oz.value = '';

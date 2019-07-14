@@ -139,7 +139,13 @@ class KegControl extends React.Component{
         isEmployee: false,
         employeeOperation: true
       })
-    } else {
+    } else if(type === "The Tap Room") {
+      this.setState ({
+        view: 'The Tap Room',
+        isEmployee: false,
+        employeeOperation: false,
+        isPatron: true
+      })
     }
   }
 
